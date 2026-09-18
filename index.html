@@ -13,9 +13,10 @@
     <div class="container">
       <form onsubmit="weatherInpSubmit(event)" class="search-box">
         <i class="bx bxs-map" style="color: #fff;; padding:0;"></i>
-        <input type="text" id="weather-inp" placeholder="Enter Your City..." />
+        <input type="text" id="weather-inp" placeholder="Enter Your City..." required />
         <button class="bx bx-search"></button>
       </form>
+      <p class="city-name"></p>
       <div class="weather-box">
         <div class="box">
             <div class="info-wather">
@@ -24,12 +25,11 @@
                     <p class="temperature"><p>
                     <p class="description"></p>
                 </div>
-            
             </div>
         </div>
       </div>
       <div class="weather-details">
-        <div class="humidity"><i class="bx bx-water" style="color:#fff;"></i>
+        <div class="humidity"><i class="bx bx-water media-ctrl" style="color:#fff;"></i>
       <div class="text">
         <div class="info-humidity">
         <span id="humidity"></span>
@@ -38,7 +38,7 @@
       </div>
       </div>
     <div class="wind">
-        <div class="humidity"><i class="bx bx-wind" style="color: #ffffff;"></i> 
+        <div class="humidity"><i class="bx bx-wind media-ctrl" style="color: #ffffff;"></i> 
       <div class="text">
         <div class="info-wind">
         <span id="wind"></span>
@@ -47,6 +47,11 @@
       </div>
       </div>
     </div>
+    </div>
+    <div class="not-found">
+      <div class="box">
+        <img src="./error.png" class="not-found-img">
+      </div>
     </div>
     </div>
       <script src="https://cdn.jsdelivr.net/npm/axios@1.17.0/dist/axios.min.js"></script>
