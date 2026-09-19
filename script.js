@@ -7,16 +7,18 @@ const description=document.querySelector(".description")
 const humidity=document.querySelector("#humidity")
 const wind=document.querySelector("#wind")
 const containerCtrl=document.querySelector(".container")
-const cityName=document.querySelector(".city-name")
 async function weatherInpSubmit(event){
     event.preventDefault(); 
-    cityName.innerHTML=""
     const weatherBox=document.querySelector(".weather-box")
     const weatherDeatils=document.querySelector(".weather-details")
     const errorBox=document.querySelector(".not-found")
     let city=weatherInp.value
     containerCtrl.style.height="33rem"
    try{
+     if (window.matchMedia("(max-width: 600px)").matches) {
+        containerCtrl.style.height = "31rem";
+        containerCtrl.style.top="26px";
+  }
         const response = await axios(
     `https://api.weatherapi.com/v1/current.json?key=60e0a3d2f152486e950213038260606&q=${city}`,
   );
@@ -65,11 +67,11 @@ else if(condition.includes("light rain shower")){
     }
 
     }
-    cityName.innerHTML=city;
   temperature.innerHTML = `${tempVal}<span>°C</span>`;
   description.innerHTML=response.data.current.condition.text;
   humidity.innerHTML=response.data.current.humidity +"%"
-  wind.innerHTML=response.data.current.wind_kph+"Km/h"
+  wind.innerHTML=`${response.data.current.wind_kph}<span class="last-spn" style="font-size:20px;"> Km/h</span>`
+ 
 
    } catch(error){
     containerCtrl.style.height="25rem"

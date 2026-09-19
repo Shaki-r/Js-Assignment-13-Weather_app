@@ -8,6 +8,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100vw;
     min-height: 100vh;
    background-repeat: no-repeat;
    object-fit: cover;background-size: cover;
@@ -106,7 +107,7 @@ body{
     width: 100%;
     bottom: 2.5rem;
     left: 0;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem;  
 }
 .weather-details .humidity,
 .weather-details .wind{
@@ -140,6 +141,9 @@ body{
     font-weight: 500;
 
 }
+.wind-p{
+    margin-left: 5px;
+}
 .weather-box, .weather-details{
     visibility: hidden;
 }
@@ -158,23 +162,23 @@ body{
     height: 18rem;
     object-fit: cover;
 }
-.city-name{
-position: absolute;
-left: 50px;
-top: 6rem;
-   font-size: 1.5rem;
-   font-weight: bold;
-}
 @media (min-width:100px) and (max-width: 1000px) {
     body,html {
         overflow-x: hidden;
         overflow-y: hidden;
     }
-    body{
-        
-    }
+  
     .container{
-        width: 80%;
+        width: 95%;
+    }
+    .weather-details .humidity i{
+        font-size: 3.1rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+       .weather-details .humidity{
+        padding: 0;
     }
 
 
